@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% load humanize %}
+{% block title %}
+    Homepage - {{ block.super }}
+{% endblock title %}
+
+{% block content %}
+    {% for post in posts %}
+    <h2>{{ post.title }}</h2> by {{ post.author }}:
+    <p>{{ post.text_body }}</p>
+    {% endfor %}
+{% endblock content %}
